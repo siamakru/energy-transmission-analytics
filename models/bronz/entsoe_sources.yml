@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw                                    # a label you choose - groups raw tables together
+    database: dev                                 # matches your dev.duckdb filename (without .duckdb)
+    schema: main                                   # DuckDB's default schema, usually leave as "main"
+    tables:
+      - name: raw_entsoe_day_ahead_prices          # exact table name as it exists in DuckDB
+        description: "Raw day-ahead electricity prices ingested from ENTSO-E API"
+        columns:
+          - name: timestamp
+            description: "Timestamp of the price reading (with timezone)"
+          - name: price_eur_mwh
+            description: "Day-ahead price in EUR per MWh"
+          - name: country_code
+            description: "Bidding zone code, e.g. DE_LU"
+          - name: ingested_at
+            description: "UTC timestamp when this row was loaded by the ingestion script"
+            
