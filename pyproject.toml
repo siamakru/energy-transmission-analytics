@@ -1,0 +1,5 @@
+[project]
+name = "energy_analytics"
+
+[project.scripts]
+energy-analytics = "energy_analytics.cli:main"
