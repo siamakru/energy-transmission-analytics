@@ -9,4 +9,4 @@ API_TOKEN = os.getenv("ENTSOE_API_TOKEN")
 DB_PATH = ROOT / "data" / "warehouse.duckdb"
 
 COUNTRY_CODE = "DE_LU"
-DAYS_BACK = 3
+DAYS_BACK = 1
