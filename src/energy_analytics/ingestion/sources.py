@@ -27,7 +27,6 @@ def _finish(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# --- one fetch function per dataset ---
 def fetch_day_ahead_prices(start, end) -> pd.DataFrame:
     prices = _client().query_day_ahead_prices(COUNTRY_CODE, start=start, end=end)
     df = prices.reset_index()

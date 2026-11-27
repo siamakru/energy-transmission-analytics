@@ -4,6 +4,7 @@ import pandas as pd
 
 from energy_analytics.ingestion.sources import DATASETS
 from energy_analytics.ingestion.load_raw import load_dataset
+from energy_analytics.config import DAYS_BACK
 
 TZ = "Europe/Berlin"
 
@@ -24,7 +25,7 @@ def main() -> None:
     args = parser.parse_args()
 
     end = pd.Timestamp(args.end, tz=TZ) if args.end else pd.Timestamp.now(tz=TZ)
-    start = pd.Timestamp(args.start, tz=TZ) if args.start else end - pd.Timedelta(days=3)
+    start = pd.Timestamp(args.start, tz=TZ) if args.start else end - pd.Timedelta(days=DAYS_BACK)
 
     if args.command == "ingest":
         names = list(DATASETS) if args.dataset == "all" else [args.dataset]
