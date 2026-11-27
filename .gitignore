@@ -9,3 +9,4 @@ logs/
 __pycache__/
 *.pyc
 .vscode/
+/dbt/.user.yml
