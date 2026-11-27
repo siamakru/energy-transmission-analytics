@@ -3,6 +3,9 @@
 
 ## [Unreleased]
 
+### Added
+- Add cronjob and Macbook system power managment.
+
 ### Changed
 - Change the single hourly price ingestion to multiple dataset ingestion e.g. load, solar, wind.
 
